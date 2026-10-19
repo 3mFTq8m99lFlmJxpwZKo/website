@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mein Blogpost – Titel hier einfügen</title>
+<style>
+  /* ---------- Grundlagen ---------- */
+  :root {
+    --akzent: #c2410c;          /* warmes Orange als Akzent */
+    --akzent-hell: #fff7ed;
+    --text: #1f2937;
+    --text-gedämpft: #6b7280;
+    --hintergrund: #fdfcfb;
+    --linie: #e5e7eb;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--hintergrund);
+    color: var(--text);
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- Kopfbereich ---------- */
+  header.blog-header {
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    color: #fff;
+    padding: 4rem 1.5rem 3.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header.blog-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--akzent);
+  }
+  header.blog-header .kategorie {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #fdba74;
+    margin-bottom: 1rem;
+  }
+  header.blog-header h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    line-height: 1.2;
+    margin: 0 auto 1rem;
+    max-width: 800px;
+    font-weight: 700;
+  }
+  header.blog-header .untertitel {
+    color: #d1d5db;
+    font-style: italic;
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+  }
+  header.blog-header .meta {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin-top: 1.5rem;
+  }
+  header.blog-header .meta span { margin: 0 0.5rem; }
+
+  /* ---------- Artikelcontainer ---------- */
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  /* ---------- Typografie im Artikel ---------- */
+  article h2 {
+    font-size: 1.75rem;
+    line-height: 1.3;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #111827;
+    border-left: 4px solid var(--akzent);
+    padding-left: 0.9rem;
+  }
+  article h3 {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+    color: #111827;
+  }
+  article p { margin: 0 0 1.4rem; }
+
+  article a {
+    color: var(--akzent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+  article a:hover { background: var(--akzent-hell); }
+
+  /* ---------- Besondere Elemente ---------- */
+  .lead {
+    font-size: 1.25rem;
+    color: var(--text-gedämpft);
+    font-style: italic;
+    border-bottom: 1px solid var(--linie);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  blockquote {
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+    background: var(--akzent-hell);
+    border-left: 4px solid var(--akzent);
+    font-style: italic;
+    color: #4b5563;
+  }
+  blockquote p { margin: 0; }
+
+  .hinweis {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin: 2rem 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.95rem;
+  }
+  .hinweis strong { color: #0369a1; }
+
+  figure {
+    margin: 2rem 0;
+    text-align: center;
+  }
+  figure img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  figcaption {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-gedämpft);
+    margin-top: 0.6rem;
+  }
+
+  code {
+    font-family: "SFMono-Regular", Consolas, monospace;
+    font-size: 0.9em;
+    background: #f3f4f6;
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+  }
+  pre {
+    background: #1f2937;
+    color: #e5e7eb;
+    padding: 1.25rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  pre code { background: none; padding: 0; color: inherit; }
+
+  hr.trenner {
+    border: none;
+    border-top: 1px solid var(--linie);
+    margin: 3rem 0;
+  }
+
+  /* ---------- Fußbereich ---------- */
+  footer.blog-footer {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    border-top: 1px solid var(--linie);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-gedämpft);
+  }
+  footer.blog-footer a { color: var(--akzent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header class="blog-header">
+  <div class="kategorie">Kategorie · Unterkategorie</div>
+  <h1>Ein Titel, der neugierig macht und trotzdem klar sagt, worum es geht</h1>
+  <p class="untertitel">Ein kurzer Untertitel, der den Kern des Artikels in einem Satz zusammenfasst.</p>
+  <div class="meta">
+    <span>Von Max Mustermann</span>·<span>12. Mai 2025</span>·<span>6 Min. Lesezeit</span>
+  </div>
+</header>
+
+<main>
+  <article>
+
+    <p class="lead">
+      Dies ist der Lead-Absatz. Er fasst die wichtigste Aussage des Artikels zusammen
+      und gibt dem Leser einen Grund, weiterzulesen – ruhig etwas größer und
+      kursiv gesetzt, damit er sich vom Rest abhebt.
+    </p>
+
+    <p>
+      Hier beginnt der eigentliche Fließtext. Die Serifenschrift und die großzügige
+      Zeilenhöhe sorgen dafür, dass längere Absätze angenehm zu lesen sind. Ein
+      <a href="#">Link</a> ist farblich hervorgehoben, aber nicht aufdringlich.
+    </p>
+
+    <h2>Erster inhaltlicher Abschnitt</h2>
+
+    <p>
+      Ein Absatz mit etwas mehr Inhalt. Wenn Sie <code>Inline-Code</code> verwenden,
+      wird er dezent hinterlegt. Für längere Codeblöcke gibt es einen eigenen Stil:
+    </p>
+
+    <pre><code>function halloWelt() {
+  console.log("Hallo, Welt!");
+}</code></pre>
+
+    <blockquote>
+      <p>„Ein gutes Zitat lockert den Text auf und gibt einer wichtigen Aussage Nachdruck.“</p>
+    </blockquote>
+
+    <div class="hinweis">
+      <strong>Hinweis:</strong> Solche Kästen eignen sich für Tipps, Warnungen oder
+      ergänzende Informationen, die den Lesefluss nicht unterbrechen sollen.
+    </div>
+
+    <h2>Zweiter Abschnitt mit einem Bild</h2>
+
+    <figure>
+      <img src="https://picsum.photos/720/400" alt="Beispielbild">
+      <figcaption>Abbildung 1: Eine Bildunterschrift erklärt, was zu sehen ist.</figcaption>
+    </figure>
+
+    <p>
+      Nach dem Bild geht der Text weiter. Die Abschnittsüberschriften haben einen
+      farbigen Akzentbalken, der die Struktur sichtbar macht, ohne zu schreien.
+    </p>
+
+    <h3>Ein Unterabschnitt</h3>
+
+    <p>
+      Auch kleinere Zwischenüberschriften sind möglich, falls der Artikel länger
+      wird. Achten Sie darauf, nicht zu viele Ebenen zu verwenden – zwei bis drei
+      reichen für einen Blogpost meist aus.
+    </p>
+
+    <hr class="trenner">
+
+    <h2>Fazit</h2>
+
+    <p>
+      Ein kurzer Abschluss rundet den Artikel ab. Hier können Sie die Kernaussage
+      noch einmal aufgreifen oder einen Ausblick geben.
+    </p>
+
+  </article>
+</main>
+
+<footer class="blog-footer">
+  © 2025 Mein Blog · <a href="#">Impressum</a> · <a href="#">Datenschutz</a>
+</footer>
+
+</body>
+</html>
